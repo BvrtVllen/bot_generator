@@ -6,7 +6,7 @@ from faker import Faker
 from telebot import TeleBot, types
 
 # TODO: вставить свой токен
-TOKEN = '6517753197:AAHhQz0UB3_tlPO1CKOAPINeioDQDD5Tbt8'
+TOKEN = 'Вставить токен'
 bot = TeleBot(TOKEN, parse_mode='html')
 # библиотека для генерации тестовых ФИО
 # указываем язык - русский
@@ -24,7 +24,7 @@ main_menu_reply_markup.row(
 )
 # третий ряд кнопок
 main_menu_reply_markup.row(
-    types.KeyboardButton(text="Ого, 1️⃣5️⃣"), types.KeyboardButton(text="Ничего себе, 2️⃣0️⃣")
+    types.KeyboardButton(text="Ого, 1️⃣2️⃣"), types.KeyboardButton(text="Ничего себе, 1️⃣3️⃣")
 )
 
 # обработчик команды '/start'
@@ -56,10 +56,10 @@ def message_handler(message: types.Message):
         payload_len = 5
     elif message.text == "Аж 🔟":
         payload_len = 10
-    elif message.text == "Ого, 1️⃣5️⃣":
-        payload_len = 15
-    elif message.text == "Ничего себе, 2️⃣0️⃣":
-        payload_len = 20
+    elif message.text == "Ого, 1️⃣2️⃣":
+        payload_len = 12
+    elif message.text == "Ничего себе, 1️⃣3️⃣":
+        payload_len = 13
     else:
         bot.send_message(chat_id=message.chat.id, text="Чего ты хочешь от меня, друг?🧐")
         return
